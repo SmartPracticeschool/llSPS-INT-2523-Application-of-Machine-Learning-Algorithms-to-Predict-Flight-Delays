@@ -1,0 +1,30 @@
+<html>
+
+<body>
+
+   <div class = "login">
+	<h1>Flights Delay Prediction</h1>
+	
+	<form action = "http://localhost:5000/login" method = "post">
+	    <input type="text" name="DEPARTURE_DELAY" placeholder="DEPARTURE_DELAY" required="required" />
+	    <input type="text" name="DEPARTURE_DATE" placeholder="DEPARTURE_DATE" required="required" />
+	    <input type="text" name="ARRIVAL_TIME" placeholder="ARRIVAL_TIME" required="required" />
+	    <input type="text" name="ARRIVAL_DELAY" placeholder="ARRIVAL_DELAY" required="required" />
+	    <input type="text" name="ORIGIN_AIRPORT" placeholder="ORIGIN_AIRPORT" required="required" />
+	    <input type="text" name="DESTINATION_AIRPORT" placeholder="DESTINATION_AIRPORT" required="required" />
+	    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	
+	</form>
+
+	<br>
+	<br>
+	{{prediction_text}}
+
+  </div>
+
+</body>
+</html>
+
+
+
+
