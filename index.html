@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Flight Delay Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+	<select name="State" required="required">
+		  <option value="">Select Airline </option>
+		  <option value=0>United Air Lines Inc.</option>
+		  <option value=1>American Airlines Inc.</option>
+		  <option value=2>US Airways Inc.</option>
+		  <option value=3>Frontier Airlines Inc.</option>
+		  <option value=4>JetBlue Airways</option>
+		  <option value=5>Skywest Airlines Inc.</option>
+		  <option value=6>Alaska Airlines Inc.</option>
+		  <option value=7>Spirit Air Lines</option>
+		  <option value=8>Southwest Airlines Co.</option>
+		  <option value=9>Delta Air Lines Inc.</option>
+		  <option value=10>Atlantic Southeast Airlines</option>
+		  <option value=11>Hawaiian Airlines Inc.</option>
+		  <option value=12>American Eagle Airlines Inc.</option>
+		  <option value=13>Virgin America</option>
+		  
+		</select>
+	    <input type="text" name="FLIGHT_NUMBER" placeholder="FLIGHT_NUMBER" required="required" />
+	    <input type="text" name="SCHEDULED_DEPARTURE" placeholder="SCHEDULED_DEPARTURE" required="required" />
+	    <input type="text" name="DEPARTURE_TIME" placeholder="DEPARTURE_TIME" required="required" />
+	    <input type="text" name="DEPARTURE_DELAY" placeholder="DEPARTURE_DELAY" required="required" />
+	    <input type="text" name="SCHEDULED_ARRIVAL" placeholder="SCHEDULED_ARRIVAL" required="required" />
+	    <input type="text" name="ARRIVAL_TIME" placeholder="ARRIVAL_TIME" required="required" />
+	       
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
